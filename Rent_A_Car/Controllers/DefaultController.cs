@@ -1,9 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Rent_A_Car.MeditorPattern.Queries;
 
 namespace Rent_A_Car.Controllers
 {
     public class DefaultController : Controller
     {
+        private readonly IMediator _mediator;
+
+        public DefaultController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -12,9 +21,11 @@ namespace Rent_A_Car.Controllers
         {
             return View();
         }
-        public IActionResult CarList()
+        public async Task<IActionResult> CarList()
         {
-            return View();
+            var values = await _mediator.Send(new GetCarQuery());
+
+            return View(values);
         }
     }
 }
