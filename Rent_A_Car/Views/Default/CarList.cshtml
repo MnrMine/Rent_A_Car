@@ -100,7 +100,7 @@
                     {
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="item-1">
-                                <a href="#"><img src="@item.ImageUrl" alt="Image" class="img-fluid"></a>
+                                <a href="#"><img src="@item.ImageUrl" style="height:300px" alt="Image" class="img-fluid"></a>
                                 <div class="item-1-contents">
                                     <div class="text-center">
                                         <h3><a href="#">@item.CarBrand @item.CarModel</a></h3>
@@ -126,10 +126,7 @@
                                             <span>Motor Gücü:</span>
                                             <span class="spec">@item.MotorPower</span>
                                         </li>
-                                        <li>
-                                            <span>Minium age</span>
-                                            <span class="spec">18 years</span>
-                                        </li>
+                                       
                                     </ul>
                                     <div class="d-flex action">
                                         <p> <a href="#" class="btn btn-primary " data-toggle="modal" data-target="#Modal1-@item.CarID">Detaylar</a>  <a href="contact.html" class="btn btn-primary">Aracı Kirala</a>
@@ -147,7 +144,7 @@
                                     </div>
                                     <div class="modal-body">
 
-                                        <img src="@item.ImageUrl" style="height:370px" />
+                                        <img src="@item.ImageUrl" style="height:370px" width="475" />
                                         <div class="card">
                                             <div class="card-header"><b>Araç Özellikleri</b></div>
                                             <div class="card-body p-3">
