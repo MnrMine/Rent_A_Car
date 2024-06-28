@@ -1,0 +1,68 @@
+﻿@model Rent_A_Car.CQRS.Results.GetCarByIdQueryResult
+@{
+    ViewData["Title"] = "UpdateCar";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title">Araç Güncelleme Sayfası</h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Araç İşlemleri</a></li>
+                <li class="breadcrumb-item active" aria-current="page">  </li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Araç Güncelleme Paneli</h4>
+                    <p class="card-description">
+                        Aşağıdaki alanları eksiksiz doldurarak araç güncelleme işlemini tamamlayabilirsiniz.
+                    </p>
+                    <form method="post">
+                        <label>Araç ID</label>
+                        <input type="text" asp-for="CarID" class="form-control" />
+                        <br />
+                        <label>Araç Marka</label>
+                        <input type="text" asp-for="CarBrand" class="form-control" />
+                        <br />
+                        <label>Araç Model</label>
+                        <input type="text" asp-for="CarModel" class="form-control" />
+                        <br />
+
+                        <label>Araç Km</label>
+                        <input type="text" asp-for="CarKM" class="form-control" />
+                        <br />
+                        <label>Araç Vites Tipi</label>
+                        <input type="text" asp-for="CarGearType" class="form-control" />
+                        <br />
+                        <label>Araç Yakıt Türü</label>
+                        <input type="text" asp-for="FuelType" class="form-control" />
+                        <br />
+                        <label>Araç Motor Gücü</label>
+                        <input type="text" asp-for="MotorPower" class="form-control" />
+                        <br />
+                        <label>Araç Kasa Tipi</label>
+                        <input type="text" asp-for="BodyType" class="form-control" />
+                        <br />
+                        <label>Araç Resim Url</label>
+                        <input type="text" asp-for="ImageUrl" class="form-control" />
+                        <br />
+                        <label>Araç Günlük Fiyat</label>
+                        <input type="text" asp-for="Price" class="form-control" />
+                        <br />
+
+                        <button class="btn btn-info">Aracı Güncelle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+

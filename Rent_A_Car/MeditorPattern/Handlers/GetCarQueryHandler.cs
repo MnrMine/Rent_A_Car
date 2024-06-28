@@ -31,9 +31,6 @@ namespace Rent_A_Car.MeditorPattern.Handlers
             }).ToListAsync();
         }
 
-        internal object Handle()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

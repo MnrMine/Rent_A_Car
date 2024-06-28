@@ -125,35 +125,34 @@
                     <div class="col-12">
 
                         <form class="trip-form" method="post" asp-action="SearchCar" asp-controller="Default">
-                            <div class="row align-items-center mb-4">
-                                <div class="col-md-6">
-                                    <h3 class="m-0">Seyahatinize Buradan Başlayın</h3>
+                            <div class="row align-items-center">
+
+                                <div class="mb-2 mb-md-0 col-md-3">
+
+                                    @Html.DropDownListFor(x => x.ReceivingLocationID, (List<SelectListItem>)ViewBag.ReceivingLocation, "Alış Lokasyon", new { @class = "custom-select form-control" })
+
                                 </div>
-                                <div class="col-md-6 text-md-right">
-                                    <span class="text-primary">32</span> <span>cars available</span></span>
+                                <div class="mb-2 mb-md-0 col-md-3">
+
+                                    @Html.DropDownListFor(x => x.DestinationLocationID, (List<SelectListItem>)ViewBag.DestinationLocation, "İade Lokasyon", new { @class = "custom-select form-control" })
+
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-3">
-                                    <label for="cf-1">Alış Lokasyonu</label>
-                                    <input type="text" id="cf-1" placeholder="Alış Lokasyonu" asp-for="ReceivingLocationID" class="form-control">
+                                <div class="mb-2 mb-md-0 col-md-3">
+                                    <div class="form-control-wrap">
+                                        <input type="text" id="cf-3" placeholder="Alış Tarihi" asp-for="PickUpDate" class="form-control datepicker px-3">
+                                        <span class="icon icon-date_range"></span>
+
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-3">
-                                    <label for="cf-2">İade Lokasyonu</label>
-                                    <input type="text" id="cf-2" placeholder="İade Lokasyonu" asp-for="DestinationLocationID" class="form-control">
+                                <div class="mb-2 mb-md-0 col-md-3">
+                                    <div class="form-control-wrap">
+                                        <input type="text" id="cf-4" placeholder="Teslim Tarihi" asp-for="DropOffDate" class="form-control datepicker px-3">
+                                        <span class="icon icon-date_range"></span>
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-3">
-                                    <label for="cf-3">Alış Tarihi </label>
-                                    <input type="text" id="cf-3" placeholder="Alış Tarihi" asp-for="PickUpDate"  class="form-control datepicker px-3">
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="cf-4">Teslim Tarihi</label>
-                                    <input type="text" id="cf-4" placeholder="Teslim Tarihi" asp-for="DropOffDate" class="form-control datepicker px-3">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <input type="submit" value="Araç Ara" class="btn btn-primary">
+                                <br /><br /><br />
+                                <div class="container">
+                                    <button type="submit" class="btn btn-primary btn-block py-3">Araç Ara</button>
                                 </div>
                             </div>
                         </form>

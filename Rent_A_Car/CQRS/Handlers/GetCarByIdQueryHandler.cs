@@ -25,7 +25,7 @@ namespace Rent_A_Car.CQRS.Handlers
                 CarKM = value.CarKM,
                 FuelType = value.FuelType,
                 ImageUrl = value.ImageUrl,
-                MotorPower = value.ImageUrl,
+                MotorPower = value.MotorPower,
                 Price = value.Price
 
             };

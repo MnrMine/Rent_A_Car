@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Rent_A_Car.DAL;
 using Rent_A_Car.MeditorPattern.Queries;
 using Rent_A_Car.Models;
@@ -19,6 +20,21 @@ namespace Rent_A_Car.Controllers
 
         public IActionResult Index()
         {
+            List<SelectListItem> values = (from x in _context.ReceivingLocations.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.LocationName,
+                                               Value = x.ReceivingLocationID.ToString()
+                                           }).ToList();
+            ViewBag.ReceivingLocation = values;
+
+            List<SelectListItem> values2 = (from x in _context.DestinationLocations.ToList()
+                                            select new SelectListItem
+                                            {
+                                                Text = x.DestinationLocationName,
+                                                Value = x.DestinationLocationID.ToString()
+                                            }).ToList();
+            ViewBag.DestinationLocation = values2;
             return View();
         }
         [HttpGet]

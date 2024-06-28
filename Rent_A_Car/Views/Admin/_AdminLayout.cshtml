@@ -1,0 +1,79 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_LayoutHeadComponentPartial")
+
+<body>
+    <div class="container-scroller">
+
+        @await Component.InvokeAsync("_LayoutSideBarComponentPartial")
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/Dashboard/Index">
+                <i class="mdi mdi-home menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/Gallery/Index">
+                <i class="mdi mdi-database menu-icon"></i>
+                <span class="menu-title">Galeri</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/About/Index">
+                <i class="mdi mdi-comment menu-icon"></i>
+                <span class="menu-title">Hakkımızda</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/CarListt">
+                <i class="mdi mdi-card menu-icon"></i>
+                <span class="menu-title">Araçlar</span>
+            </a>
+        </li>
+       
+        <li class="nav-item">
+            <a class="nav-link" href="">
+                <i class="mdi mdi-chart-bar menu-icon"></i>
+                <span class="menu-title">Referanslar</span>
+            </a>
+        </li>
+        
+        
+       
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+                <i class="mdi mdi-logout menu-icon"></i>
+                <span class="menu-title">Çıkış Yap</span>
+            </a>
+        </li>
+        </ul>
+        </nav>
+
+
+        <div class="container-fluid page-body-wrapper">
+                @await Component.InvokeAsync("_LayoutNavbarComponentPartial")
+
+
+            <div class="main-panel">
+                    @RenderBody()
+
+
+            </div>
+        </div>
+    </div>
+    <script src="~/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/js/off-canvas.js"></script>
+    <script src="~/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/js/hoverable-collapse.js"></script>
+    <script src="~/Breeze-Free-Bootstrap-Admin-Template-1.0.0/template/assets/js/misc.js"></script>
+</body>
+</html>
+

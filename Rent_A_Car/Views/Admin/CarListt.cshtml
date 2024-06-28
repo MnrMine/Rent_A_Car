@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewData["Title"] = "CarList";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title">Tüm Araçlar </h3>
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+               
+                <li class="breadcrumb-item active" aria-current="page"> Araçlar </li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Araç Listesi</h4>
+                    <p class="card-description">
+                        Aşagıdaki tablodan araçları görüntüleyebilir,uzerinde işlem yapabilirsiniz.
+                    </p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Araç Resim / Marka </th>
+                                    <th>Araç Model</th>
+                                    <th>Araç KM</th>
+                                    <th>Vites Tipi</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        
+                                        <th>
+                                            <div class="media align-items-center">
+                                                <a href="#" class="avatar rounded-circle mr-3">
+                                                    <img alt="Image placeholder" src="@item.ImageUrl">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span class="mb-0 text-sm">@item.CarBrand</span>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td>@item.CarModel</td>
+                                        <td>@item.CarKM</td>
+                                        <td>@item.CarGearType</td>
+                                        <td><a href="/Admin/DeleteCar/@item.CarID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/UpdateCar/@item.CarID" class="btn btn-success">Güncelle</a></td>
+                                        
+                                    </tr>
+                                }
+
+
+
+
+                            </tbody>
+                        </table>
+                        <br />
+                        <a href="/Admin/CreateCar" class="btn btn-primary">Yeni Araç Girişi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
